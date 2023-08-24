@@ -40,7 +40,7 @@ pipeline{
                 steps{
                     script{
                         withCredentials([string(credentialsId: 'docker-secrettext', variable: '')]){
-                            sh 'kubectl apply -f regapp-deploy.yml'
+                            sh 'kubectl apply -f deployment.yaml'
                             sh 'kubectl get pods'
                         }
                     
